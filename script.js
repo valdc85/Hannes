@@ -1,6 +1,6 @@
 document.getElementById('checkButton').addEventListener('click', function() {
     const userInput = document.getElementById('answerInput').value;
-    const correctVariable = "correct_answer"; // Dit is de juiste variabele naam
+    const correctVariable = "@correct_answer.present?"; // Dit is de juiste variabele naam
 
     // De bug: in de HTML-code staat "@correct_answr", de 'e' en 'w' missen.
     // De oplossing is de juiste variabele naam invoeren.
