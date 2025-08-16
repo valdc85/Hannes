@@ -18,3 +18,42 @@
     <script src="script.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Gevonden? Hier is je Cadeau!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welkom, collega!</h1>
+        <p>Er zit een bug in het codefragment hieronder. Kun je het probleem oplossen door de juiste tekst in te voeren?</p>
+        
+        <pre class="code-block">
+            <code>
+# app/views/puzzles/show.html.erb
+&lt;%# De bug: De variabele 'correct_answer' is verkeerd gespeld %&gt;
+&lt;% if @correct_answr.present? %>
+    &lt;p&gt;Bug opgelost!&lt;/p&gt;
+    &lt;!-- Hieronder verschijnt de knop -->
+&lt;% end %>
+            </code>
+        </pre>
+        
+        <input type="text" id="answerInput" placeholder="Typ de juiste variabele naam...">
+        <button id="checkButton">Controleer oplossing</button>
+        
+        <div id="bugSolution" class="hidden">
+            <p><strong>De bug is opgelost!</strong></p>
+            <button onclick="alert('Gefeliciteerd, de code is: 7351')">Klik hier voor de code!</button>
+        </div>
+        
+        <p id="resultMessage" class="hidden"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
