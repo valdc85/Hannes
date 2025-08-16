@@ -1,14 +1,17 @@
 document.getElementById('checkButton').addEventListener('click', function() {
-    const puzzle = "fix_me";
-    const solution = "fix_me";
+    const userInput = document.getElementById('answerInput').value;
+    const correctVariable = "correct_answer"; // Dit is de juiste variabele naam
 
-    // De bug zit in deze if-statement.
-    // De 'strict equality operator' (===) vergelijkt ook het type,
-    // waardoor de code altijd 'valse' zal retourneren.
-    if (puzzle == solution) { // De bug: Gebruik '==' in plaats van '===' voor dit probleem
-        document.getElementById('resultMessage').textContent = "Goed gedaan! De code voor het slot is: 7351";
+    // De bug: in de HTML-code staat "@correct_answr", de 'e' en 'w' missen.
+    // De oplossing is de juiste variabele naam invoeren.
+    if (userInput === correctVariable) {
+        document.getElementById('bugSolution').classList.remove('hidden');
+        document.getElementById('resultMessage').textContent = "Goed gedaan, de bug is opgelost!";
         document.getElementById('resultMessage').classList.remove('hidden');
+        document.getElementById('resultMessage').style.color = "#4CAF50";
     } else {
-        alert("Nog niet helemaal! De bug zit er nog steeds in. Blijf zoeken!");
+        document.getElementById('resultMessage').textContent = "Helaas, de ingevoerde naam is onjuist. Probeer het opnieuw!";
+        document.getElementById('resultMessage').classList.remove('hidden');
+        document.getElementById('resultMessage').style.color = "red";
     }
 });
